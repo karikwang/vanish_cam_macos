@@ -1,0 +1,8 @@
+mediapipe>=0.10.14,<1.0; sys_platform == "darwin"
+mediapipe>=0.10.14; sys_platform != "darwin"
+opencv-contrib-python>=4.10,<6
+numpy>=1.26,<2.0; sys_platform == "darwin"
+numpy>=1.26,<3; sys_platform != "darwin"
+pyvirtualcam>=0.12,<1
+pygame>=2.5,<3
+pyobjc-framework-Cocoa>=10; sys_platform == "darwin"

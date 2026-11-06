@@ -1,0 +1,18 @@
+# Python & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Runtime logs & downloaded TFLite models
+logs/
+models/
+.dmg_staging/
+*.dmg
+
+# macOS metadata
+.DS_Store
+.AppleDouble
+.LSOverride

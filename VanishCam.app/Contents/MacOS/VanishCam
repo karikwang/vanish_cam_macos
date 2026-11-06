@@ -1,0 +1,27 @@
+#!/bin/zsh -f
+# VanishCam macOS Application Bundle Launcher
+SCRIPT_DIR="${0:A:h}"
+RES_DIR="${SCRIPT_DIR:h}/Resources"
+RUNNER="$RES_DIR/run_vanishcam.sh"
+
+# 1. Strip quarantine on our own bundle so AppTranslocation stops relocating it
+/usr/bin/xattr -cr "${SCRIPT_DIR:h:h}" 2>/dev/null || true
+
+# 2. Automatically fix insecure zsh completion directories on the user's Mac so `compinit`
+#    stops prompting "Ignore insecure directories [y/n]?" on every new Terminal window
+for d in /usr/local/share/zsh /usr/local/share/zsh/site-functions /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions "$HOME/.zsh" "$HOME/.oh-my-zsh"; do
+    [[ -e "$d" ]] && /bin/chmod -R go-w "$d" 2>/dev/null || true
+done
+
+# 3. Launch via Terminal with a leading `y;` prefix:
+#    - If `compinit` asks `[y/n]?`, it consumes the leading `y` (which answers Yes!)
+#      and then the shell executes `; /bin/zsh -f ...` intact!
+#    - If `compinit` does NOT ask, `y` is just a no-op before `; /bin/zsh -f ...`!
+CMD_STR="y 2>/dev/null; /bin/zsh -f '$RUNNER'; exit"
+
+/usr/bin/osascript <<APPLESCRIPT
+tell application "Terminal"
+    activate
+    do script "$CMD_STR"
+end tell
+APPLESCRIPT
