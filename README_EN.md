@@ -21,7 +21,7 @@ You don't need to know how to code or use Git to run this app:
 
 ### Option B: Download the Repository ZIP
 
-1. Click the green `< Code >` button near the top-right of this GitHub page, then click `Download ZIP` at the bottom of the dropdown menu.
+1. Click the green `< > Code` button near the top-right of this GitHub page, then click `Download ZIP` at the bottom of the dropdown menu.
 2. Open your `Downloads` folder on macOS, double-click the downloaded `.zip` file to extract it, and double-click `VanishCam.app`!
 3. *(Note: On the very first launch, the app automatically configures its Python environment in the background, which takes ~1 minute. If macOS shows an "unidentified developer" prompt, simply Right-Click (or Control-Click) `VanishCam.app` -> Select "Open").*
 
