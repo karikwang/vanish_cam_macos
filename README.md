@@ -30,19 +30,29 @@
 ## ✨ 核心特性
 
 1. **四种实时特效模式**：
-   * **1 - Normal Vanish (经典渐变隐身)**：比出剪刀手 (V 手势)，身体在微光中平滑消融。
-   * **2 - Naruto Vanish (火影替身术)**：双手合十结印，爆开烟雾并落下替身木桩 (`assets/vanish.MP3`)。
-   * **3 - Particles (粒子消散)**：比出剪刀手 (V 手势)，身体轮廓碎裂为彩色微粒随风飘散。
-   * **4 - Goku Teleport (悟空瞬间移动)**：食指与中指并拢抵住额头保持 1 秒，伴随漫画纵向速度线与经典瞬移音效 (`assets/teleport.MP3`) 瞬间消失；放下手再次抵住额头 1 秒即可反向瞬移归来。
+
+   - 1 - Normal Vanish (经典渐变隐身)：比出剪刀手 (V 手势)，身体在微光中平滑消融。
+
+   * 2 - Naruto Vanish (火影替身术)：双手合十结印，爆开烟雾并落下替身木桩 (`assets/vanish.MP3`)。
+   * 3 - Particles (粒子消散)：比出剪刀手 (V 手势)，身体轮廓碎裂为彩色微粒随风飘散。
+   * 4 - Goku Teleport (悟空瞬间移动)：食指与中指并拢抵住额头保持 1 秒，伴随漫画纵向速度线与经典瞬移音效 (`assets/teleport.MP3`) 瞬间消失；放下手再次抵住额头 1 秒即可反向瞬移归来。
+
 2. **全局快捷键开关手势识别 (`Command + Shift + T`)**：
+
    * 背景采集完成后默认关闭手势识别，保证平时视频会议画面 100% 满帧流畅、零额外算力消耗。
    * 即使正在全屏使用腾讯会议、Zoom、飞书或浏览器，按下 `Command + Shift + T` 即可随时开启/关闭手势识别。
+
 3. **支持手动选择与随时热切换摄像头 (`Command + Shift + C` / `C`)**：
+
    * 启动菜单底部自带摄像头选择栏，可点击或按 `C` 键提前选定摄像头。
    * 进入视频画面后若发现选错了摄像头，无需退出重启，随时按 `C` 键或全局快捷键 `Command + Shift + C` 即可切换到下一个摄像头并重新采集背景。
+
 4. **OBS 画面 100% 纯净（独立桌面 HUD + 系统通知提醒）**：
+
    * 状态提示通过 macOS 独立置顶悬浮窗 (`NSPanel`) + 系统通知中心 显示并在 3 秒后自动消失，绝不绘制在摄像头画面内，确保 OBS 窗口采集转发给会议对方时看不到任何文字提示。
+
 5. **双击即用 (`VanishCam.app` & `VanishCam_macOS.dmg`)**：
+
    * 内置原生 `VanishCam.app` 与打包好的 `release/VanishCam_macOS.dmg`，无需每次打开终端手敲命令。
 
 ## 🚀 快速开始 (macOS)
@@ -98,11 +108,11 @@ python3 vanish_cam.py --mode goku --no-virtual-camera
 
 ## 🙏 致谢与许可声明 (Acknowledgements & License)
 
-* **致谢原作者 (Upstream Attribution)**：本项目的最初创意与基础实现源自 Nico Auriemma 的开源项目 [Nicovic17/vanish_webcam](https://github.com/Nicovic17/vanish_webcam)。感谢原作者出色的创意设计！
-* **本项目新增与改进内容 (Contributions in this Fork)**：
+* 致谢原作者 (Upstream Attribution)：本项目的最初创意与基础实现源自 Nico Auriemma 的开源项目 [Nicovic17/vanish_webcam](https://github.com/Nicovic17/vanish_webcam)。感谢原作者出色的创意设计！
+* 本项目新增与改进内容 (Contributions in this Fork)：
   * 独立编写并开源了 Goku 瞬间移动模式 (`goku_effect.py`) 与 Particles 粒子消散模式 (`particles_effect.py`)。
   * 新增了 macOS 系统级全局快捷键 (`Command + Shift + T` / `Command + Shift + C`)、摄像头选择与实时热切换、以及独立桌面悬浮窗 (`NSPanel`) 与系统通知提醒。
   * 修复了 Apple Silicon Mac 上的 MediaPipe Metal 崩溃问题，并提供了原生 `VanishCam.app` 与 `VanishCam_macOS.dmg` 安装包。
-* **开源协议与免责声明 (License & Disclaimer)**：
+* 开源协议与免责声明 (License & Disclaimer)：
   * 本仓库中新增的移植与扩展代码采用 [MIT License](./LICENSE) 开源协议，仅供个人学习、技术交流与非商业用途使用。
   * 原项目基础代码归原作者 [Nicovic17](https://github.com/Nicovic17/vanish_webcam) 所有；音效与动漫招式灵感（《七龙珠》、《火影忍者》）的相关知识产权归各自版权方所有。
