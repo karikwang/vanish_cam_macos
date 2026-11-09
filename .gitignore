@@ -10,7 +10,6 @@ env/
 logs/
 models/
 .dmg_staging/
-*.dmg
 
 # macOS metadata
 .DS_Store
